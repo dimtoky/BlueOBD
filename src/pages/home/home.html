@@ -1,17 +1,43 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+    <ion-navbar tabIcon="car">
+
+        <ion-title>
+            Informations temps réel</ion-title>
+    </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+    <ion-list no-lines>
+        <button ion-item (click)="infoMsg()">
+            <a item-start>Vitesse :</a>
+            <ion-badge item-end>70 Km/H</ion-badge>
+        </button>
+        <ion-item-divider></ion-item-divider>
+        <ion-item>
+            <a item-start> Régime moteur :</a>
+            <ion-badge item-end>1500 Tr/min</ion-badge>
+        </ion-item>
+        <ion-item-divider></ion-item-divider>
+        <ion-item item-end>
+            <a item-start> Température moteur (Huile) :</a>
+            <ion-badge item-end>82 °C</ion-badge>
+        </ion-item>
+        <ion-item-divider></ion-item-divider>
+        <ion-item item-end>
+            <a item-start> Température moteur (Air) :</a>
+            <ion-badge item-end>45 °C</ion-badge>
+        </ion-item>
+        <ion-item-divider></ion-item-divider>
+        <ion-item item-end>
+            <a item-start> Niveau de carburant :</a>
+            <ion-badge item-end>24 %</ion-badge>
+        </ion-item>
+        <ion-item-divider></ion-item-divider>
+        <ion-item item-end>
+            <a item-start> Consommation de carburant :</a>
+            <ion-badge item-end>3 Litre/H</ion-badge>
+        </ion-item>
+        <ion-item-divider></ion-item-divider>
+    </ion-list>
+
 </ion-content>

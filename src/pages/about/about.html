@@ -1,11 +1,33 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      About
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            <ion-icon name="settings"></ion-icon> Réglages
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+    <ion-list radio-group>
+        <ion-list-header>
+            Choisissez votre boitier Bluetooth dans la liste
+        </ion-list-header>
 
+        <ion-item>
+            <ion-label>Bluetooth 1</ion-label>
+            <ion-radio value="go"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Haut parleur</ion-label>
+            <ion-radio value="rust"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Boitier OBD</ion-label>
+            <ion-radio value="python"></ion-radio>
+        </ion-item>
+    </ion-list>
+
+
+    <button ion-button on-tap="enableBluetooth()">Connecter</button>
 </ion-content>
