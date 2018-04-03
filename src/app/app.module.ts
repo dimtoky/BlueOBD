@@ -7,11 +7,12 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-
+import { Injectable } from '@angular/core'
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { BluetoothSerial } from '@ionic-native/bluetooth-serial';
 import { AlertesPage } from '../pages/alertes/alertes';
+import { ShareService} from '../providers/share-service/share-service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { AlertesPage } from '../pages/alertes/alertes';
     StatusBar,
     SplashScreen,
     BluetoothSerial,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    ShareService,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]
 })
 export class AppModule {}
