@@ -1,5 +1,5 @@
 import { ShareService } from './../../providers/share-service/share-service';
-import { AboutPage } from './../about/about';
+import { SettingsPage } from '../settings/settings';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
@@ -21,7 +21,7 @@ export class HomePage {
 
       if (!this.connected )
       {
-        navCtrl.push(AboutPage);
+        navCtrl.push(SettingsPage);
       }
 
     setInterval(() => {

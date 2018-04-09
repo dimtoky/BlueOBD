@@ -1,7 +1,7 @@
 import { AlertesPage } from './../alertes/alertes';
 import { Component } from '@angular/core';
-import { AboutPage } from '../about/about';
-import { ContactPage } from '../contact/contact';
+import { SettingsPage } from '../settings/settings';
+import { ChartsPage } from '../charts/charts';
 import { HomePage } from '../home/home';
 
 
@@ -11,8 +11,8 @@ import { HomePage } from '../home/home';
 export class TabsPage {
 
   tab1Root = HomePage;
-  tab2Root = AboutPage;
-  tab3Root = ContactPage;
+  tab2Root = SettingsPage;
+  tab3Root = ChartsPage;
   tab4Root = AlertesPage;
   constructor() {
 

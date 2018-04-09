@@ -10,11 +10,11 @@ import { AlertController } from 'ionic-angular';
 
 
 @Component({
-  selector: 'page-about',
-  templateUrl: 'about.html'
+  selector: 'page-settings',
+  templateUrl: 'settings.html'
 })
 
-export class AboutPage {
+export class SettingsPage {
 
 
   devices;
@@ -28,7 +28,7 @@ export class AboutPage {
     private bs: BluetoothSerial,
     public alertCtrl: AlertController,
   private shareService: ShareService) {
-   this.showDevices();
+   //this.showDevices();
 
     setInterval(() => {
 

@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
+import { SettingsPage } from '../pages/settings/settings';
+import { ChartsPage } from '../pages/charts/charts';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { Injectable } from '@angular/core'
@@ -17,8 +17,8 @@ import { ShareService} from '../providers/share-service/share-service';
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
+    SettingsPage,
+    ChartsPage,
     HomePage,
     TabsPage,
     AlertesPage
@@ -30,8 +30,8 @@ import { ShareService} from '../providers/share-service/share-service';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
+    SettingsPage,
+    ChartsPage,
     HomePage,
     TabsPage,
     AlertesPage
