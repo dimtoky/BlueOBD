@@ -1,3 +1,4 @@
+import { HomePage } from './../home/home';
 import { ShareService } from './../../providers/share-service/share-service';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
@@ -19,7 +20,7 @@ export class SettingsPage {
 
   devices;
   buff;
-  connected = false;
+  connected;
   statut;
   list: string[] = ["0"];
   macAddress = "00:00:00:00:00:00";
@@ -28,7 +29,8 @@ export class SettingsPage {
     private bs: BluetoothSerial,
     public alertCtrl: AlertController,
   private shareService: ShareService) {
-   //this.showDevices();
+    this.connected = false;
+   this.showDevices();
 
     setInterval(() => {
 
@@ -49,12 +51,11 @@ export class SettingsPage {
 
 
 
-
   receiveData() {
     this.bs.readUntil("\n").then((data) => {
       this.buff = data;
+      this.list = this.buff.split("%");
     });
-    this.list = this.buff.split("%");
   }
 
 
@@ -63,20 +64,41 @@ export class SettingsPage {
     this.bs.connect(this.macAddress).subscribe((data) => {
       let alert = this.alertCtrl.create({
         title: 'Bluetooth',
-        subTitle: data,
+        subTitle: 'Connection réussie',
+        message: data,
         buttons: ['ok']
       });
       alert.present();
     }, error => {
       let alert = this.alertCtrl.create({
         title: 'Bluetooth',
-        subTitle: error,
+        subTitle: 'Connection échouée',
+        message: error,
         buttons: ['ok']
       });
       alert.present();
     });
   }
 
+  disconnectBluetooth() {
+    this.bs.disconnect().then((data) => {
+      let alert = this.alertCtrl.create({
+        title: 'Bluetooth',
+        subTitle: 'Déconnection réussie',
+        message: data,
+        buttons: ['ok']
+      });
+      alert.present();
+    }, error => {
+      let alert = this.alertCtrl.create({
+        title: 'Bluetooth',
+        subTitle: 'Déconnection échouée',
+        message: error,
+        buttons: ['ok']
+      });
+      alert.present();
+    });
+  }
 
   showDevices() {
     this.bs.list().then((data) => {

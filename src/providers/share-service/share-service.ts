@@ -14,6 +14,7 @@ export class ShareService {
     conected:boolean;
 
     constructor() {
+      this.conected = false;
         this.data = [""];
     }
 
@@ -25,5 +26,9 @@ export class ShareService {
 
     getData() {
         return this.data;
+    }
+
+    getCoState(){
+      return this.conected;
     }
 }

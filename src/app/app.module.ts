@@ -13,6 +13,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { BluetoothSerial } from '@ionic-native/bluetooth-serial';
 import { AlertesPage } from '../pages/alertes/alertes';
 import { ShareService} from '../providers/share-service/share-service';
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,11 @@ import { ShareService} from '../providers/share-service/share-service';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot({
+      name: 'BlueOBDdb',
+         driverOrder: [ 'sqlite','indexeddb', 'websql']
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -41,6 +46,7 @@ import { ShareService} from '../providers/share-service/share-service';
     SplashScreen,
     BluetoothSerial,
     ShareService,
+    IonicStorageModule,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]
 })

@@ -16,7 +16,6 @@
     <ion-item>
 
         <ion-badge> Etat : {{statut}}</ion-badge>
-
     </ion-item>
     <ion-list radio-group>
         <ion-list-header>
@@ -38,8 +37,8 @@
         <button ion-button large round icon-only item-start on-tap="showDevices()">
             <ion-icon name="refresh-circle"></ion-icon>
         </button>
-        <button ion-button item-end on-tap="connectBluetooth()">Connecter</button>
-
+        <button ion-button item-end on-tap="connectBluetooth()" [disabled]="connected">Connecter</button>
+        <button ion-button item-end on-tap="disconnectBluetooth()" [disabled]="!connected">Déconnecter</button>
 
     </ion-item>
 

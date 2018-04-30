@@ -16,34 +16,41 @@
 
 <ion-content padding>
     <ion-list no-lines>
-        <button ion-item>
+        <button ion-item (click)="infoAdd(1)">
             <a>Contrôle du dosage air/carburant :</a>
-            <ion-badge item-end><ion-icon name="checkmark-circle"></ion-icon></ion-badge>
+            <ion-badge item-end *ngIf="list[6]=='0'"><ion-icon name="checkmark-circle"></ion-icon></ion-badge>
+            <ion-badge item-end color="danger" *ngIf="list[6]!='0'"><ion-icon name="alert"></ion-icon></ion-badge>
         </button>
 
-        <button ion-item>
+        <button ion-item (click)="infoAdd(2)">
             <a>Système d'allumage :</a>
-            <ion-badge item-end color="danger"><ion-icon name="alert"></ion-icon></ion-badge>
+            <ion-badge item-end *ngIf="list[7]=='0'"><ion-icon name="checkmark-circle"></ion-icon></ion-badge>
+            <ion-badge item-end color="danger" *ngIf="list[7]!='0'"><ion-icon name="alert"></ion-icon></ion-badge>
         </button>
-        <button ion-item>
-            <a>Contrôle des émissions auxiliairese :</a>
-            <ion-badge item-end><ion-icon name="checkmark-circle"></ion-icon></ion-badge>
+        <button ion-item (click)="infoAdd(3)">
+            <a>Contrôle des émissions auxiliaires :</a>
+             <ion-badge item-end *ngIf="list[8]=='0'"><ion-icon name="checkmark-circle"></ion-icon></ion-badge>
+            <ion-badge item-end color="danger" *ngIf="list[8]!='0'"><ion-icon name="alert"></ion-icon></ion-badge>
         </button>
-        <button ion-item>
+        <button ion-item (click)="infoAdd(4)">
             <a>Contrôle du ralenti moteur :</a>
-            <ion-badge item-end><ion-icon name="checkmark-circle"></ion-icon></ion-badge>
+             <ion-badge item-end *ngIf="list[9]=='0'"><ion-icon name="checkmark-circle"></ion-icon></ion-badge>
+            <ion-badge item-end color="danger" *ngIf="list[9]!='0'"><ion-icon name="alert"></ion-icon></ion-badge>
         </button>
-        <button ion-item>
+        <button ion-item (click)="infoAdd(5)">
             <a>Ordinateur de bord et sorties auxiliaires :</a>
-            <ion-badge item-end><ion-icon name="checkmark-circle"></ion-icon></ion-badge>
+             <ion-badge item-end *ngIf="list[10]=='0'"><ion-icon name="checkmark-circle"></ion-icon></ion-badge>
+            <ion-badge item-end color="danger" *ngIf="list[10]!='0'"><ion-icon name="alert"></ion-icon></ion-badge>
         </button>
-        <button ion-item>
+        <button ion-item (click)="infoAdd(6)">
             <a>Contrôle de la transmission (boîte de vitesses) :</a>
-            <ion-badge item-end color="danger"><ion-icon name="alert"></ion-icon></ion-badge>
+            <ion-badge item-end *ngIf="list[11]=='0'"><ion-icon name="checkmark-circle"></ion-icon></ion-badge>
+            <ion-badge item-end color="danger" *ngIf="list[11]!='0'"><ion-icon name="alert"></ion-icon></ion-badge>
         </button>
-        <button ion-item>
+        <button ion-item (click)="infoAdd(7)">
             <a>Propulsion hydride :</a>
-            <ion-badge item-end><ion-icon name="checkmark-circle"></ion-icon></ion-badge>
+             <ion-badge item-end *ngIf="list[12]=='0'"><ion-icon name="checkmark-circle"></ion-icon></ion-badge>
+            <ion-badge item-end color="danger" *ngIf="list[12]!='0'"><ion-icon name="alert"></ion-icon></ion-badge>
         </button>
 
     </ion-list>
